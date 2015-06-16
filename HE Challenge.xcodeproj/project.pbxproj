@@ -15,6 +15,15 @@
 		EFAB9FF81B304E5B000DDA1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFAB9FF71B304E5B000DDA1C /* Images.xcassets */; };
 		EFAB9FFB1B304E5B000DDA1C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFAB9FF91B304E5B000DDA1C /* LaunchScreen.xib */; };
 		EFABA0071B304E5B000DDA1C /* HE_ChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0061B304E5B000DDA1C /* HE_ChallengeTests.m */; };
+		EFABA0131B3057FB000DDA1C /* FlickrClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0121B3057FB000DDA1C /* FlickrClient.m */; };
+		EFABA0161B30593C000DDA1C /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0151B30593C000DDA1C /* FlickrPhoto.m */; };
+		EFABA01A1B30605B000DDA1C /* PhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0191B30605B000DDA1C /* PhotosTableViewController.m */; };
+		EFABA01E1B30723D000DDA1C /* FlickrCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA01D1B30723D000DDA1C /* FlickrCell.m */; };
+		EFABA0201B3076B4000DDA1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFABA01F1B3076B4000DDA1C /* QuartzCore.framework */; };
+		EFABA0231B30788D000DDA1C /* PhotoDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0221B30788D000DDA1C /* PhotoDetailTableViewController.m */; };
+		EFABA0261B307E81000DDA1C /* CommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0251B307E81000DDA1C /* CommentsTableViewController.m */; };
+		EFABA02C1B308BC3000DDA1C /* FlickrComment.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA02B1B308BC3000DDA1C /* FlickrComment.m */; };
+		EFABA02F1B30905A000DDA1C /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA02E1B30905A000DDA1C /* CommentCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +53,23 @@
 		EFABA0001B304E5B000DDA1C /* HE ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HE ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFABA0051B304E5B000DDA1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFABA0061B304E5B000DDA1C /* HE_ChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HE_ChallengeTests.m; sourceTree = "<group>"; };
+		EFABA0111B3057FB000DDA1C /* FlickrClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrClient.h; sourceTree = "<group>"; };
+		EFABA0121B3057FB000DDA1C /* FlickrClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrClient.m; sourceTree = "<group>"; };
+		EFABA0141B30593C000DDA1C /* FlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
+		EFABA0151B30593C000DDA1C /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
+		EFABA0181B30605B000DDA1C /* PhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosTableViewController.h; sourceTree = "<group>"; };
+		EFABA0191B30605B000DDA1C /* PhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosTableViewController.m; sourceTree = "<group>"; };
+		EFABA01C1B30723D000DDA1C /* FlickrCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrCell.h; sourceTree = "<group>"; };
+		EFABA01D1B30723D000DDA1C /* FlickrCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrCell.m; sourceTree = "<group>"; };
+		EFABA01F1B3076B4000DDA1C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EFABA0211B30788D000DDA1C /* PhotoDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailTableViewController.h; sourceTree = "<group>"; };
+		EFABA0221B30788D000DDA1C /* PhotoDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailTableViewController.m; sourceTree = "<group>"; };
+		EFABA0241B307E81000DDA1C /* CommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsTableViewController.h; sourceTree = "<group>"; };
+		EFABA0251B307E81000DDA1C /* CommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsTableViewController.m; sourceTree = "<group>"; };
+		EFABA02A1B308BC3000DDA1C /* FlickrComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrComment.h; sourceTree = "<group>"; };
+		EFABA02B1B308BC3000DDA1C /* FlickrComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrComment.m; sourceTree = "<group>"; };
+		EFABA02D1B30905A000DDA1C /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		EFABA02E1B30905A000DDA1C /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFABA0201B3076B4000DDA1C /* QuartzCore.framework in Frameworks */,
 				22E203E8524BC1745245344C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +95,7 @@
 		73C402740FF0A840C7CBCAD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFABA01F1B3076B4000DDA1C /* QuartzCore.framework */,
 				7A831A6214219F311EBB8143 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -96,6 +124,9 @@
 		EFAB9FE91B304E5B000DDA1C /* HE Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				EFABA01B1B307228000DDA1C /* Views */,
+				EFABA0171B306046000DDA1C /* Controllers */,
+				EFABA0101B3057AF000DDA1C /* Models */,
 				EFAB9FEE1B304E5B000DDA1C /* AppDelegate.h */,
 				EFAB9FEF1B304E5B000DDA1C /* AppDelegate.m */,
 				EFAB9FF11B304E5B000DDA1C /* ViewController.h */,
@@ -132,6 +163,43 @@
 				EFABA0051B304E5B000DDA1C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFABA0101B3057AF000DDA1C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EFABA0111B3057FB000DDA1C /* FlickrClient.h */,
+				EFABA0121B3057FB000DDA1C /* FlickrClient.m */,
+				EFABA0141B30593C000DDA1C /* FlickrPhoto.h */,
+				EFABA0151B30593C000DDA1C /* FlickrPhoto.m */,
+				EFABA02A1B308BC3000DDA1C /* FlickrComment.h */,
+				EFABA02B1B308BC3000DDA1C /* FlickrComment.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EFABA0171B306046000DDA1C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EFABA0181B30605B000DDA1C /* PhotosTableViewController.h */,
+				EFABA0191B30605B000DDA1C /* PhotosTableViewController.m */,
+				EFABA0211B30788D000DDA1C /* PhotoDetailTableViewController.h */,
+				EFABA0221B30788D000DDA1C /* PhotoDetailTableViewController.m */,
+				EFABA0241B307E81000DDA1C /* CommentsTableViewController.h */,
+				EFABA0251B307E81000DDA1C /* CommentsTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EFABA01B1B307228000DDA1C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EFABA01C1B30723D000DDA1C /* FlickrCell.h */,
+				EFABA01D1B30723D000DDA1C /* FlickrCell.m */,
+				EFABA02D1B30905A000DDA1C /* CommentCell.h */,
+				EFABA02E1B30905A000DDA1C /* CommentCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		FF3038A068E1A903973A4DF2 /* Pods */ = {
@@ -278,9 +346,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFABA02F1B30905A000DDA1C /* CommentCell.m in Sources */,
 				EFAB9FF31B304E5B000DDA1C /* ViewController.m in Sources */,
 				EFAB9FF01B304E5B000DDA1C /* AppDelegate.m in Sources */,
+				EFABA0261B307E81000DDA1C /* CommentsTableViewController.m in Sources */,
+				EFABA01E1B30723D000DDA1C /* FlickrCell.m in Sources */,
+				EFABA01A1B30605B000DDA1C /* PhotosTableViewController.m in Sources */,
 				EFAB9FED1B304E5B000DDA1C /* main.m in Sources */,
+				EFABA02C1B308BC3000DDA1C /* FlickrComment.m in Sources */,
+				EFABA0161B30593C000DDA1C /* FlickrPhoto.m in Sources */,
+				EFABA0231B30788D000DDA1C /* PhotoDetailTableViewController.m in Sources */,
+				EFABA0131B3057FB000DDA1C /* FlickrClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +488,7 @@
 				INFOPLIST_FILE = "HE Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -423,6 +500,7 @@
 				INFOPLIST_FILE = "HE Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
