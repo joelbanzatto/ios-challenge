@@ -8,9 +8,12 @@
 
 #import "PhotosTableViewController.h"
 #import "FlickrCell.h"
+#import "FlickrPhoto.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <QuartzCore/QuartzCore.h>
+#import "PhotoDetailTableViewController.h"
 
 @interface PhotosTableViewController ()
 
@@ -76,11 +79,24 @@
         [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     }
     
+    NSDictionary *params = @{
+                             @"method": @"flickr.photos.getRecent",
+                             @"format": @"json",
+                             @"api_key": @"d08df37395527773cff6e2d3ad82b50e",
+                             @"nojsoncallback": @"?",
+                             @"page": [NSNumber numberWithInteger:page],
+                             @"extras": @"owner_name,views"
+                             };
     
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"https://www.flickr.com/services/rest/" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
+
+        self.maxRows = [(NSNumber*)[responseObject valueForKeyPath:@"photos.total"] integerValue];
+        self.perPage = [(NSNumber*)[responseObject valueForKeyPath:@"photos.perpage"] integerValue];
+        NSArray *photos = (NSArray*) [responseObject valueForKeyPath:@"photos.photo"];
+        
+        
         [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
         [self.refreshControl endRefreshing];
         
@@ -89,8 +105,10 @@
             self.photos = [NSMutableArray array];
         }
         
-        for (int i = 0; i < self.perPage; i++) {
-            [self.photos addObject:@"ahaha"];
+        for (NSDictionary *photo in photos)
+        {
+            FlickrPhoto *flickrPhoto = [MTLJSONAdapter modelOfClass:[FlickrPhoto class] fromJSONDictionary:photo error:nil];
+            [self.photos addObject:flickrPhoto];
         }
         
         [self.tableView reloadData];
@@ -101,7 +119,9 @@
         
         NSLog(@"Refreshing page %ldi", (long)page);
         
-    });
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -119,10 +139,13 @@
     
     FlickrCell *cell = (FlickrCell*) [tableView dequeueReusableCellWithIdentifier:@"FlickrCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    NSString *imageURL = @"http://rewalls.com/images/201101/reWalls.com_18078.jpg";
+    FlickrPhoto *photo = [self.photos objectAtIndex:indexPath.row];
+
     
-    [cell.photoImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    cell.lblTitle.text = photo.title;
+    cell.lblAuthor.text = photo.ownername;
+    [cell.photoImageView setImageWithURL:[NSURL URLWithString:photo.thumbURL] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    
     
     return cell;
 }
@@ -143,12 +166,17 @@
     }
 }
 
-
 #pragma mark - Navigation
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    if ([segue.identifier isEqualToString:@"PhotoDetailSegue"])
+    {
+        PhotoDetailTableViewController *destinationController = (PhotoDetailTableViewController*) segue.destinationViewController;
+        
+        
+        destinationController.flickrPhoto = [self.photos objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    }
 }
 
 @end

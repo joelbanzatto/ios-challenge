@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22E203E8524BC1745245344C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A831A6214219F311EBB8143 /* libPods.a */; };
+		EF2975781B3208CD00A380CF /* FlickrOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2975771B3208CD00A380CF /* FlickrOwner.m */; };
 		EFAB9FED1B304E5B000DDA1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAB9FEC1B304E5B000DDA1C /* main.m */; };
 		EFAB9FF01B304E5B000DDA1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAB9FEF1B304E5B000DDA1C /* AppDelegate.m */; };
 		EFAB9FF31B304E5B000DDA1C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAB9FF21B304E5B000DDA1C /* ViewController.m */; };
@@ -15,7 +16,6 @@
 		EFAB9FF81B304E5B000DDA1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFAB9FF71B304E5B000DDA1C /* Images.xcassets */; };
 		EFAB9FFB1B304E5B000DDA1C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFAB9FF91B304E5B000DDA1C /* LaunchScreen.xib */; };
 		EFABA0071B304E5B000DDA1C /* HE_ChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0061B304E5B000DDA1C /* HE_ChallengeTests.m */; };
-		EFABA0131B3057FB000DDA1C /* FlickrClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0121B3057FB000DDA1C /* FlickrClient.m */; };
 		EFABA0161B30593C000DDA1C /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0151B30593C000DDA1C /* FlickrPhoto.m */; };
 		EFABA01A1B30605B000DDA1C /* PhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0191B30605B000DDA1C /* PhotosTableViewController.m */; };
 		EFABA01E1B30723D000DDA1C /* FlickrCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA01D1B30723D000DDA1C /* FlickrCell.m */; };
@@ -40,6 +40,8 @@
 		152D22A663FE811EC2B0A290 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7A831A6214219F311EBB8143 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E9892611E71FA63E29ADF99 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EF2975761B3208CD00A380CF /* FlickrOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrOwner.h; sourceTree = "<group>"; };
+		EF2975771B3208CD00A380CF /* FlickrOwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrOwner.m; sourceTree = "<group>"; };
 		EFAB9FE71B304E5B000DDA1C /* HE Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HE Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAB9FEB1B304E5B000DDA1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFAB9FEC1B304E5B000DDA1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,8 +55,6 @@
 		EFABA0001B304E5B000DDA1C /* HE ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HE ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFABA0051B304E5B000DDA1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFABA0061B304E5B000DDA1C /* HE_ChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HE_ChallengeTests.m; sourceTree = "<group>"; };
-		EFABA0111B3057FB000DDA1C /* FlickrClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrClient.h; sourceTree = "<group>"; };
-		EFABA0121B3057FB000DDA1C /* FlickrClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrClient.m; sourceTree = "<group>"; };
 		EFABA0141B30593C000DDA1C /* FlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
 		EFABA0151B30593C000DDA1C /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
 		EFABA0181B30605B000DDA1C /* PhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosTableViewController.h; sourceTree = "<group>"; };
@@ -168,12 +168,12 @@
 		EFABA0101B3057AF000DDA1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EFABA0111B3057FB000DDA1C /* FlickrClient.h */,
-				EFABA0121B3057FB000DDA1C /* FlickrClient.m */,
 				EFABA0141B30593C000DDA1C /* FlickrPhoto.h */,
 				EFABA0151B30593C000DDA1C /* FlickrPhoto.m */,
 				EFABA02A1B308BC3000DDA1C /* FlickrComment.h */,
 				EFABA02B1B308BC3000DDA1C /* FlickrComment.m */,
+				EF2975761B3208CD00A380CF /* FlickrOwner.h */,
+				EF2975771B3208CD00A380CF /* FlickrOwner.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -348,6 +348,7 @@
 			files = (
 				EFABA02F1B30905A000DDA1C /* CommentCell.m in Sources */,
 				EFAB9FF31B304E5B000DDA1C /* ViewController.m in Sources */,
+				EF2975781B3208CD00A380CF /* FlickrOwner.m in Sources */,
 				EFAB9FF01B304E5B000DDA1C /* AppDelegate.m in Sources */,
 				EFABA0261B307E81000DDA1C /* CommentsTableViewController.m in Sources */,
 				EFABA01E1B30723D000DDA1C /* FlickrCell.m in Sources */,
@@ -356,7 +357,6 @@
 				EFABA02C1B308BC3000DDA1C /* FlickrComment.m in Sources */,
 				EFABA0161B30593C000DDA1C /* FlickrPhoto.m in Sources */,
 				EFABA0231B30788D000DDA1C /* PhotoDetailTableViewController.m in Sources */,
-				EFABA0131B3057FB000DDA1C /* FlickrClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

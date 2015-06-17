@@ -11,6 +11,8 @@
 @interface FlickrCell : UITableViewCell
 
 
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblAuthor;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 
 @end

@@ -9,6 +9,7 @@
 #import "PhotoDetailTableViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface PhotoDetailTableViewController ()
 
@@ -25,11 +26,45 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self.ownerPhotoImageView setImageWithURL:[NSURL URLWithString:@"http://farm9.staticflickr.com/8896/buddyicons/132362167@N02.jpg"] placeholderImage:[UIImage imageNamed:@"person"]];
+    self.lblTitle.text = self.flickrPhoto.title;
+    self.lblOwner.text = self.flickrPhoto.ownername;
+    self.lblViewsCount.text = [NSString stringWithFormat:@"%ld view(s)", self.flickrPhoto.views.integerValue];
     
-    [self.photoImageView setImageWithURL:[NSURL URLWithString:@"http://rewalls.com/images/201101/reWalls.com_18078.jpg"] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    
+    [self.photoImageView setImageWithURL:[NSURL URLWithString:self.flickrPhoto.photoURL]];
     
     self.ownerPhotoImageView.layer.cornerRadius = 27.0f;
+    
+    
+    // photo owner
+    NSDictionary *params = @{
+                             @"method": @"flickr.people.getInfo",
+                             @"format": @"json",
+                             @"api_key": @"d08df37395527773cff6e2d3ad82b50e",
+                             @"nojsoncallback": @"?",
+                             @"user_id": self.flickrPhoto.owner
+                             };
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"https://www.flickr.com/services/rest/" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSDictionary *owner = (NSDictionary*) [responseObject valueForKey:@"person"];
+        self.flickrOwner = [MTLJSONAdapter modelOfClass:[FlickrOwner class] fromJSONDictionary:owner error:nil];
+        
+        [self.ownerPhotoImageView setImageWithURL:[NSURL URLWithString:self.flickrOwner.photoURL] placeholderImage:[UIImage imageNamed:@"person"]];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.commentsViewController) {
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,58 +84,23 @@
     return 4;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"EmbedCommentsController"]) {
+        self.commentsViewController = (CommentsTableViewController*) segue.destinationViewController;
+        
+        
+        self.commentsViewController.delegate = self;
+        self.commentsViewController.flickrPhoto = self.flickrPhoto;
+    }
 }
-*/
+
+#pragma mark - Custom Delegates
+
+- (void)didLoadedComments:(NSArray *)comments {
+    self.lblCommentsCount.text = [NSString stringWithFormat:@"%ld comment(s)", comments.count];
+}
 
 @end

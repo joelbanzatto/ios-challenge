@@ -7,11 +7,14 @@
 //
 
 #import "CommentCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation CommentCell
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    self.ivPhoto.layer.cornerRadius = self.ivPhoto.frame.size.height / 2;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -1,2 +1,3 @@
-pod 'Overcoat', '~>2.0'
+pod 'AFNetworking'
+pod 'Mantle'
 pod 'MBProgressHUD', '~> 0.9.1'

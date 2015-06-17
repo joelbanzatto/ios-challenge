@@ -6,11 +6,21 @@
 //  Copyright (c) 2015 Joel Banzatto. All rights reserved.
 //
 
-#import "MTLModel.h"
+#import <Mantle/Mantle.h>
 
-@interface FlickrComment : MTLModel
+@interface FlickrComment : MTLModel<MTLJSONSerializing>
 
 @property (copy, nonatomic, readonly) NSString *comment;
-@property (copy, nonatomic, readonly) NSString *author;
+@property (copy, nonatomic, readonly) NSString *authorName;
+@property (copy, nonatomic, readonly) NSString *authorId;
+@property (copy, nonatomic, readonly) NSString *iconfarm;
+@property (copy, nonatomic, readonly) NSString *iconserver;
+@property (copy, nonatomic, readonly) NSNumber *datecreate;
+
+
+- (NSString*) normalizedComment;
+
+@property (nonatomic, readonly) NSString *photoURL;
+
 
 @end
