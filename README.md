@@ -13,7 +13,7 @@ https://farm1.staticflickr.com/2/1418878_1e92283336_m.jpg
 https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&format=json&api_key=d08df37395527773cff6e2d3ad82b50e
 
 # photo info
-https://www.flickr.com/services/rest/?method=flickr.photos.getInfo&photo_id=18237533494&format=json&api_key=d08df37395527773cff6e2d3ad82b50e
+https://www.flickr.com/services/rest/?method=flickr.photos.getInfo&photo_id=18187291444&format=json&api_key=d08df37395527773cff6e2d3ad82b50e
 https://farm1.staticflickr.com/2/1418878_1e92283336_m.jpg
 
 # user

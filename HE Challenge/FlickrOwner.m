@@ -13,7 +13,7 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     
     return @{
-             @"identifier": @"id",
+             @"identifier": @"nsid",
              @"iconserver": @"iconserver",
              @"iconfarm": @"iconfarm",
              };

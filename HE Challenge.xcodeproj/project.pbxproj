@@ -24,6 +24,7 @@
 		EFABA0261B307E81000DDA1C /* CommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA0251B307E81000DDA1C /* CommentsTableViewController.m */; };
 		EFABA02C1B308BC3000DDA1C /* FlickrComment.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA02B1B308BC3000DDA1C /* FlickrComment.m */; };
 		EFABA02F1B30905A000DDA1C /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABA02E1B30905A000DDA1C /* CommentCell.m */; };
+		EFD2114E1B32476200134F04 /* FlickrPhotoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD2114D1B32476200134F04 /* FlickrPhotoInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		EFABA02B1B308BC3000DDA1C /* FlickrComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrComment.m; sourceTree = "<group>"; };
 		EFABA02D1B30905A000DDA1C /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		EFABA02E1B30905A000DDA1C /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		EFD2114C1B32476200134F04 /* FlickrPhotoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoInfo.h; sourceTree = "<group>"; };
+		EFD2114D1B32476200134F04 /* FlickrPhotoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,8 @@
 		EFABA0101B3057AF000DDA1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EFD2114C1B32476200134F04 /* FlickrPhotoInfo.h */,
+				EFD2114D1B32476200134F04 /* FlickrPhotoInfo.m */,
 				EFABA0141B30593C000DDA1C /* FlickrPhoto.h */,
 				EFABA0151B30593C000DDA1C /* FlickrPhoto.m */,
 				EFABA02A1B308BC3000DDA1C /* FlickrComment.h */,
@@ -347,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFABA02F1B30905A000DDA1C /* CommentCell.m in Sources */,
+				EFD2114E1B32476200134F04 /* FlickrPhotoInfo.m in Sources */,
 				EFAB9FF31B304E5B000DDA1C /* ViewController.m in Sources */,
 				EF2975781B3208CD00A380CF /* FlickrOwner.m in Sources */,
 				EFAB9FF01B304E5B000DDA1C /* AppDelegate.m in Sources */,

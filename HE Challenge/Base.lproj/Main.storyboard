@@ -164,7 +164,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lp7-oe-QUf" id="zKU-VO-P93">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgu-Xi-vTq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 comment(s)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgu-Xi-vTq">
                                                     <rect key="frame" x="8" y="6" width="160" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="NYp-kf-jpW"/>
@@ -225,6 +225,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Photo" id="bfh-IM-BDn"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="lblCommentsCount" destination="Lgu-Xi-vTq" id="oth-Tm-ieu"/>
@@ -317,7 +318,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iu4-p2-hTG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.13420508418947294" green="0.30833766693947373" blue="0.70240542763157898" alpha="0.48999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.30196078431372547" blue="0.53333333333333333" alpha="0.48999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>

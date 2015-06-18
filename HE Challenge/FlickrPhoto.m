@@ -43,7 +43,7 @@
     return [NSString stringWithFormat:@"https://farm%ld.staticflickr.com/%ld/%ld_%@_s.jpg", (long)_farm.integerValue, (long)_server_id.integerValue, (long)_identifier.integerValue, _secret];
 }
 - (NSString*) photoURL {
-    return [NSString stringWithFormat:@"https://farm%ld.staticflickr.com/%ld/%ld_%@_b.jpg", (long)_farm.integerValue, (long)_server_id.integerValue, (long)_identifier.integerValue, _secret];
+    return [NSString stringWithFormat:@"https://farm%ld.staticflickr.com/%ld/%ld_%@_m.jpg", (long)_farm.integerValue, (long)_server_id.integerValue, (long)_identifier.integerValue, _secret];
 }
 
 @end

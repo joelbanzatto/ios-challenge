@@ -20,12 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     self.lblTitle.text = self.flickrPhoto.title;
     self.lblOwner.text = self.flickrPhoto.ownername;
     self.lblViewsCount.text = [NSString stringWithFormat:@"%ld view(s)", self.flickrPhoto.views.integerValue];
@@ -36,19 +30,27 @@
     self.ownerPhotoImageView.layer.cornerRadius = 27.0f;
     
     
-    // photo owner
+    // photo info
     NSDictionary *params = @{
-                             @"method": @"flickr.people.getInfo",
+                             @"method": @"flickr.photos.getInfo",
                              @"format": @"json",
                              @"api_key": @"d08df37395527773cff6e2d3ad82b50e",
                              @"nojsoncallback": @"?",
-                             @"user_id": self.flickrPhoto.owner
+                             @"photo_id": self.flickrPhoto.identifier
                              };
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"https://www.flickr.com/services/rest/" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSDictionary *owner = (NSDictionary*) [responseObject valueForKey:@"person"];
+        NSDictionary *photo = (NSDictionary*) [responseObject valueForKey:@"photo"];
+        
+        self.flickrPhotoInfo = [MTLJSONAdapter modelOfClass:[FlickrPhotoInfo class] fromJSONDictionary:photo error:nil];
+        
+        self.lblCommentsCount.text = [NSString stringWithFormat:@"%ld comment(s)", self.flickrPhotoInfo.comments.integerValue];
+        
+        
+        NSDictionary *owner = (NSDictionary*) [responseObject valueForKeyPath:@"photo.owner"];
+        
         self.flickrOwner = [MTLJSONAdapter modelOfClass:[FlickrOwner class] fromJSONDictionary:owner error:nil];
         
         [self.ownerPhotoImageView setImageWithURL:[NSURL URLWithString:self.flickrOwner.photoURL] placeholderImage:[UIImage imageNamed:@"person"]];
@@ -56,14 +58,6 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    if (self.commentsViewController) {
-    }
     
 }
 
@@ -91,16 +85,8 @@
     if ([segue.identifier isEqualToString:@"EmbedCommentsController"]) {
         self.commentsViewController = (CommentsTableViewController*) segue.destinationViewController;
         
-        
-        self.commentsViewController.delegate = self;
         self.commentsViewController.flickrPhoto = self.flickrPhoto;
     }
-}
-
-#pragma mark - Custom Delegates
-
-- (void)didLoadedComments:(NSArray *)comments {
-    self.lblCommentsCount.text = [NSString stringWithFormat:@"%ld comment(s)", comments.count];
 }
 
 @end

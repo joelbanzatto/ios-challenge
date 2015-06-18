@@ -117,7 +117,6 @@
         
         self.loading = NO;
         
-        NSLog(@"Refreshing page %ldi", (long)page);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);

@@ -57,10 +57,6 @@ static NSString * const CellIdentifier = @"CommentCell";
             [self.comments addObject:flickrComment];
         }
         
-        if ([self.delegate respondsToSelector:@selector(didLoadedComments:)]) {
-            [self.delegate didLoadedComments:self.comments];
-        }
-        
         [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

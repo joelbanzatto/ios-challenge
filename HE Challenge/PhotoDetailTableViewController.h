@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "FlickrPhoto.h"
+#import "FlickrPhotoInfo.h"
 #import "FlickrOwner.h"
 #import "CommentsTableViewController.h"
 
-@interface PhotoDetailTableViewController : UITableViewController <CommentsLoadedDelegate>
+@interface PhotoDetailTableViewController : UITableViewController
 
 @property (strong, nonatomic) FlickrPhoto *flickrPhoto;
+@property (strong, nonatomic) FlickrPhotoInfo *flickrPhotoInfo;
 @property (strong, nonatomic) FlickrPhoto *flickrOwner;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblOwner;
